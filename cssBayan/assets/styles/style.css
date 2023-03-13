@@ -114,7 +114,10 @@ svg {
     max-height: 100rem;
     overflow: visible;
 }
-.accordion-input:checked ~ .accordion-icon {
+.accordion-input:checked ~ .accordion-label > .accordion-text {
+    color: var(--color-white);
+}
+.accordion-input:checked ~ .accordion-label > .accordion-icon {
     transform: rotate(180deg);
 }
 .accordion-input:hover ~ .accordion-content {
