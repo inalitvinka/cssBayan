@@ -87,8 +87,8 @@ svg {
 .accordion {
     max-width: 75rem;
     margin: 4rem auto;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 .accordion:hover .accordion-icon {
     visibility: visible;
