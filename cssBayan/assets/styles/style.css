@@ -1,0 +1,200 @@
+/* === ROOTS === */
+:root {
+    --color-black: rgb(19, 19, 19);
+    --color-white: rgb(255, 255, 255, .9);
+    --color-gold: rgb(255, 215, 0, .95);
+    --color-goldContent: rgb(255, 215, 0, .9);
+    --color-gray: rgb(121, 118, 118);
+  }
+
+/* === GLOBAL === */
+html {
+    font-size: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+*:focus, 
+*:active {
+    outline: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+p {
+    width: auto;
+    overflow-wrap: break-word; 
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a {
+    display: inline-block;
+    background: transparent;
+    text-decoration: none;
+}
+
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+body {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-black);
+}
+.container {
+    max-width: 100%;
+    min-height: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* === Main Section */
+.accordion {
+    max-width: 75rem;
+    margin: 4rem auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.accordion-input:checked ~ .accordion-inner .accordion-text {
+    color: var(--color-white);
+}
+@media (hover: hover) {
+    .accordion:hover .accordion-icon {
+        visibility: visible;
+    }
+    .accordion:hover .accordion-text {
+        color: var(--color-white);
+    }
+    .accordion-label:hover > .accordion-inner .accordion-icon {
+        transform: rotate(180deg);
+    }
+    /* .accordion-label:hover > .accordion-icon {
+        transform: rotate(180deg);
+    } */
+    .accordion-input:hover ~ .accordion-content {
+        max-height: 100rem;
+        transition: all 2.2s ease;
+        transform: scale(.91);
+    }
+}
+.accordion-title {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: solid .15rem var(--color-white);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-gold);
+}
+.accordion-item {
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+    border-bottom: solid .15rem var(--color-white);
+    cursor: pointer;
+}
+.accordion-label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.accordion-input:checked ~ .accordion-content {
+    max-height: 100rem;
+    overflow: visible;
+}
+.accordion-input:checked ~ .accordion-label > .accordion-text {
+    color: var(--color-white);
+}
+.accordion-input:checked ~ .accordion-inner > .accordion-icon {
+    transform: rotate(180deg);
+}
+.accordion-input:checked ~ .accordion-content {
+    max-height: 100rem;
+    transition: all 2.2s ease;
+    transform: scale(1);
+}
+.accordion-inner {
+    display: flex;
+    justify-content: space-between;
+}
+.accordion-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-goldContent);
+}
+.accordion-icon {
+    visibility: hidden;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+    transform: scale(.5);
+}
+.accordion-img {
+    margin: 1rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.accordion-pic {
+    max-width: 30rem;
+    width: 100%;
+    background-color: var(--color-gray);
+    border-radius: 2rem;
+}
+/* === Adaptive === */
+@media screen and (max-width: 820px) {
+    .accordion-input:checked ~ .accordion-inner .accordion-icon {
+        visibility: visible;
+    }
+}
+@media screen and (max-width: 455px) {
+    .accordion-text {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+}
+@media screen and (max-width: 355px) {
+    .accordion-title {
+        font-size: 2.5rem;
+    }
+    .accordion-text {
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    .accordion-pic {
+        max-width: 23rem;
+    }
+}
