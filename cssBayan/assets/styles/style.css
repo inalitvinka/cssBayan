@@ -1,9 +1,9 @@
 /* === ROOTS === */
 :root {
     --color-black: rgb(19, 19, 19);
-    --color-white: rgb(255, 255, 255, .7);
-    --color-gold: rgb(255, 215, 0, .85);
-    --color-goldContent: rgb(255, 215, 0, .6);
+    --color-white: rgb(255, 255, 255, .9);
+    --color-gold: rgb(255, 215, 0, .95);
+    --color-goldContent: rgb(255, 215, 0, .9);
     --color-gray: rgb(121, 118, 118);
   }
 
