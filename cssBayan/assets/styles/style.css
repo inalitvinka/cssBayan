@@ -89,11 +89,30 @@ svg {
     padding-right: 1rem;
     padding-left: 1rem;
 }
-.accordion:hover .accordion-icon {
+.accordion-input:checked ~ .accordion-inner .accordion-icon {
     visibility: visible;
 }
-.accordion:hover .accordion-text {
+.accordion-input:checked ~ .accordion-inner .accordion-text {
     color: var(--color-white);
+}
+@media (hover: hover) {
+    .accordion:hover .accordion-icon {
+        visibility: visible;
+    }
+    .accordion:hover .accordion-text {
+        color: var(--color-white);
+    }
+    .accordion-label:hover > .accordion-inner .accordion-icon {
+        transform: rotate(180deg);
+    }
+    /* .accordion-label:hover > .accordion-icon {
+        transform: rotate(180deg);
+    } */
+    .accordion-input:hover ~ .accordion-content {
+        max-height: 100rem;
+        transition: all 2.2s ease;
+        transform: scale(.91);
+    }
 }
 .accordion-title {
     margin-bottom: 2rem;
@@ -114,12 +133,6 @@ svg {
     flex-direction: column;
     cursor: pointer;
 }
-.accordion-label:hover > .accordion-inner .accordion-icon {
-    transform: rotate(180deg);
-}
-/* .accordion-label:hover > .accordion-icon {
-    transform: rotate(180deg);
-} */
 .accordion-input:checked ~ .accordion-content {
     max-height: 100rem;
     overflow: visible;
@@ -129,11 +142,6 @@ svg {
 }
 .accordion-input:checked ~ .accordion-inner > .accordion-icon {
     transform: rotate(180deg);
-}
-.accordion-input:hover ~ .accordion-content {
-    max-height: 100rem;
-    transition: all 2.2s ease;
-    transform: scale(.91);
 }
 .accordion-input:checked ~ .accordion-content {
     max-height: 100rem;
